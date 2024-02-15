@@ -1,3 +1,0 @@
-file:///C:/Project3Website/site/index.html - Template URL
-
-images\swiper-default-01.jpg - is the base name of the slider image
