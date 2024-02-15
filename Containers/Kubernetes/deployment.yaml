@@ -17,7 +17,7 @@ spec:
     spec: # Describes what the actual container will be
       containers:
       - name: nginx
-        image: nginx:1.14.2 #if this was in dockerhub, that value could be there
+        image: siilvance/2048:initial #if this was in dockerhub, that value could be there
         ports:
         - containerPort: 80 #if you go to port 80 you'll recieve some information from there
 
