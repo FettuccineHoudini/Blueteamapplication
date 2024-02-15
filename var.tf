@@ -9,7 +9,7 @@ variable "default_tags" {
 }
 
 variable "aws_region" {
-  type = string
+  type    = string
   default = "us-east-1"
 }
 
@@ -34,12 +34,10 @@ variable "cluster_name" {
   default = "blue-team-cluster"
   type    = string
 }
-
 variable "codecommit_repository_name" {
-  type = string
+  type    = string
   default = "blue-repo"
 }
-
 variable "codebuild_role_name" {
   type    = string
   default = "blue-codebuild-role"

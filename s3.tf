@@ -25,5 +25,5 @@ resource "aws_s3_bucket_policy" "backend" {
 
 resource "aws_codecommit_repository" "blue-codecommit-repo" {
   repository_name = var.codecommit_repository_name
-  description = "CodeCommit Repository"
+  description     = "CodeCommit Repository"
 }
