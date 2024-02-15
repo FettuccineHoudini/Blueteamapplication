@@ -15,8 +15,8 @@ resource "aws_subnet" "public" {
   # cidr_block = cidrsubnet(prefix, newbits, netnum)
   # 10.0.0.0/24
   # 10.0.1.0/24
-  cidr_block      = cidrsubnet(aws_vpc.main.cidr_block, 8, count.index)
-  ipv6_cidr_block = cidrsubnet(aws_vpc.main.ipv6_cidr_block, 8, count.index)
+  cidr_block              = cidrsubnet(aws_vpc.main.cidr_block, 8, count.index)
+  ipv6_cidr_block         = cidrsubnet(aws_vpc.main.ipv6_cidr_block, 8, count.index)
   map_public_ip_on_launch = true
   tags = {
     "Name" = "${var.default_tags.username}-public-${data.aws_availability_zones.availability_zone.names[count.index]}"
