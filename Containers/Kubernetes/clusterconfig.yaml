@@ -1,0 +1,22 @@
+#set's up the syntax that you're using eksctl
+apiVersion: eksctl.io/v1alpha5 
+#or Deployment file, but this is the type of file
+kind: ClusterConfig 
+
+metadata:
+  name: kloch
+  region: us-east-1
+
+# What resources are being created whenever you start this node cluster
+nodeGroups:
+  - name: ng-1
+    instanceType: t3.micro
+    desiredCapacity: 1
+    volumeSize: 80
+    ssh:
+      allow: true
+      publicKeyName: kloch
+
+availabilityZones: ["us-east-1a", "us-east-1b"]
+
+

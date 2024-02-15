@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+#Deployment portion
+spec:
+  replicas: 2 # number of desired pods
+  selector: # referencing the metadata, will match a particular Namespace (grouping of containers and pods)
+    matchLabels:
+      app: nginx
+  template: # Describes what the pods are
+    metadata:
+      labels:
+        app: nginx
+    spec: # Describes what the actual container will be
+      containers:
+      - name: nginx
+        image: nginx:1.14.2 #if this was in dockerhub, that value could be there
+        ports:
+        - containerPort: 80 #if you go to port 80 you'll recieve some information from there
+
+---
+#Service portion
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  namespace: default
+
+spec:
+  selector:
+    app: nginx
+  type: LoadBalancer
+  ports:
+  - name: nginx
+    protocol: TCP
+    port: 80
+    targetPort: 80
