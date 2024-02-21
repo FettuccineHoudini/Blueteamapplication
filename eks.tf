@@ -52,7 +52,7 @@ module "eks" {
       max_size       = 4
       desired_size   = 2
       instance_types = ["t3.medium"]
-      capacity_type  = "SPOT"
+      capacity_type  = "ON-DEMAND"
       tags = {
         ExtraTag = "helloworld"
       }
